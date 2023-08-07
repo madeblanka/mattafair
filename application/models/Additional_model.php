@@ -22,6 +22,12 @@ class Additional_model extends CI_Model
     {
         return $this->db->get_where($this->_table, ["id_additional" => $id_additional])->result();
     }
+    
+    public function getAllId()
+    {
+        return $this->db->select('id_additional,name')->get($this->_table)->result();
+    }
+
     public function penjualan($id_tour,$tanggal)
     {
         $a = $this->Transaksi_model->caritanggal($tanggal);

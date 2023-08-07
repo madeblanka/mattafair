@@ -21,6 +21,11 @@ class Hotel_model extends CI_Model
         return $this->db->get_where($this->_table, ["id_hotel" => $id_hotel])->result();
     }
     
+    public function getname($id_hotel)
+    {
+        return $this->db->get_where($this->_table, ["id_hotel" => $id_hotel])->row();
+    }
+
     public function getAllId()
     {
         return $this->db->select('id_hotel,name')->get($this->_table)->result();

@@ -34,11 +34,12 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?php echo site_url('room/adminsaveroom/') ?>" method="post"  enctype="multipart/form-data">
+              <form action="<?php echo site_url('image/adminsaveimage/') ?>" method="post"  enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="form-group">                        
                     <label for="exampleInputEmail1">Room Name</label>
                         <select name="id_room" id="idroom" class="form-control select2" style="width: 100%;">
+                            <option selected value="0">-</option>
                             <?php foreach ($room as $r): ?>
                             <option value="<?php echo $r->id_room?>" required><?php echo $r->name?></option>
                             <?php endforeach; ?>
@@ -48,6 +49,7 @@
                     <div class="form-group">                        
                     <label for="exampleInputEmail1">Tour Name</label>
                         <select name="id_tour" id="idTour" class="form-control select2" style="width: 100%;">
+                            <option selected value="0">-</option>
                             <?php foreach ($tour as $t): ?>
                             <option value="<?php echo $t->id_tour?>" required><?php echo $t->name?></option>
                             <?php endforeach; ?>
@@ -57,12 +59,13 @@
                     <div class="form-group">                        
                     <label for="exampleInputEmail1">Hotel Tour Name</label>
                         <select name="id_hoteltour" id="idTour" class="form-control select2" style="width: 100%;">
+                            <option selected value="0">-</option>
                             <?php foreach ($hoteltour as $ht): ?>
                             <option value="<?php echo $ht->id_hoteltour?>" required><?php echo $ht->name?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
-                  
+
                   <div class="form-group">
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
