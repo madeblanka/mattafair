@@ -59,7 +59,7 @@ class Hotel_model extends CI_Model
     private function _uploadImage()
     {
         $config['upload_path']          = './hotel/';
-        $config['allowed_types']        = 'gif|jpg|png|jpeg|webp';
+        $config['allowed_types']        = 'jpg|png|jpeg|webp';
         $config['file_name']            = $this->name.'-'.$this->address;
         $config['overwrite']			      = true;
         $config['max_size']             = 1024; // 1MB

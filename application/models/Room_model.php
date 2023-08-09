@@ -30,6 +30,11 @@ class Room_model extends CI_Model
         return $this->db->get_where($this->_table, ["id_hotel" => $id_hotel])->result();
     }
 
+    public function getidroomrow($id_room)
+    {
+        return $this->db->get_where($this->_table, ["id_room" => $id_room])->row();
+    }
+
     public function save()
     {
         $post = $this->input->post();

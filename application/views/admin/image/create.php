@@ -70,8 +70,8 @@
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="image1" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input type="file" name="image1" >
+                        
                       </div>
                     </div>
                   
@@ -79,8 +79,8 @@
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="image2" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input type="file" name="image2" >
+                        
                       </div>
                     </div>
                   
@@ -88,8 +88,8 @@
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="image3" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input type="file" name="image3" >
+                        
                       </div>
                     </div>
                   
@@ -97,8 +97,8 @@
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="image4" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input type="file" name="image4" >
+                        
                       </div>
                     </div>
                   
@@ -106,8 +106,8 @@
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="image5" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input type="file" name="image5" >
+                        
                       </div>
                     </div>
                   
@@ -115,8 +115,8 @@
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="image6" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input type="file" name="image6" >
+                        
                       </div>
                     </div>
                   
@@ -124,8 +124,8 @@
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="image7" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input type="file" name="image7" >
+                        
                       </div>
                     </div>
                   
@@ -133,8 +133,8 @@
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="image8" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input type="file" name="image8" >
+                        
                       </div>
                     </div>
                   
@@ -142,8 +142,8 @@
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="image9" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input type="file" name="image9" >
+                        
                       </div>
                     </div>
                   
@@ -151,8 +151,8 @@
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" name="image10" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <input type="file" name="image10" >
+                        
                       </div>
                     </div>
                   

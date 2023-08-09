@@ -10,6 +10,8 @@ class Detailbooked_model extends CI_Model
     public $id_additional;
     public $id_hoteltour;
     public $person;
+    public $adult;
+    public $child;
     public $datebook;
     public $checkin;
     public $checkout;
@@ -38,6 +40,8 @@ class Detailbooked_model extends CI_Model
         $this->id_additional = $post["id_additional"];
         $this->id_hoteltour = $post["id_hoteltour"];
         $this->person = $post["person"];
+        $this->adult = $post["adult"];
+        $this->child = $post["child"];
         $this->datebook = $post["datebook"];
         $this->checkin = $post["chcekin"];
         $this->checkout = $post["checkout"];
@@ -70,5 +74,36 @@ class Detailbooked_model extends CI_Model
         return $this->db->update($this->_table, $this, array('id_booked' => $post['id_booked']));
     }
 
+    function create_transaksi($id_cart,$id_room,$id_tour,$id_additional,$id_hoteltour,$person,$adult,$child,$datebook,$checkin,$checkout,$price,$qty,$total_price,$created_at,$updated_at){
+        $this->db->trans_start();
+            //INSERT TO PACKAGE
+            $data  = array(
+            'id_cart'=>$id_cart,
+			'id_room'=>$id_room,
+			'id_tour'=>$id_tour,  // Ambil dan set data id_tour sesuai index array dari $index
+			'id_additional'=>$id_additional, 
+			'id_hoteltour'=>$id_hoteltour, // Ambil dan set data telepon sesuai index array dari $index
+            'person'=>$person,
+            'hargabeli'=>$hargabeli,
+            'totalbeli'=>$totalbeli,
+            );
+
+            $array = [];
+            for ($i = 0; $i < count($data['id_room']); $i++) {
+              $array[] = array(
+                'id_cart' => $data['id_cart'],
+                'id_room' => $data['id_room'][$i],
+                'id_tour' => $data['id_tour'][$i],
+                'id_additional' => $data['id_additional'][$i],
+                'id_hoteltour' => $data['id_hoteltour'][$i],
+                'person' => $data['person'][$i],
+                'hargabeli' => $data['hargabeli'][$i],
+                'totalbeli' => $data['totalbeli'][$i]
+              );
+            }
+            //MULTIPLE INSERT TO DETAIL TABLE
+            $this->db->insert_batch('tb_detail', $array);
+        $this->db->trans_complete();
+    }
  
 }

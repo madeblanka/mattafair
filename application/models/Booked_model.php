@@ -58,5 +58,13 @@ class Booked_model extends CI_Model
         return $this->db->update($this->_table, $this, array('id_booked' => $post['id_booked']));
     }
 
+    public function getidbooked()
+    {
+        $this->db->select('id_booked');
+        $this->db->from('booked');
+        $this->db->order_by('id_booked DESC');
+        $this->db->limit(1);
+        return $this->db->get()->row();
+    }
  
 }

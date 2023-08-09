@@ -33,6 +33,11 @@ class Image_model extends CI_Model
 
     public function getByIdroom($id_room)
     {
+        return $this->db->get_where($this->_table, ["id_room" => $id_room])->result();
+    }
+
+    public function getByIdroomrow($id_room)
+    {
         return $this->db->get_where($this->_table, ["id_room" => $id_room])->row();
     }
 
@@ -83,304 +88,224 @@ class Image_model extends CI_Model
 
     private function _uploadImage()
     {
-        if($this->id_room != 0 )
-        {
-            return $imagename = $this->id_room;
-        }elseif($this->id_tour != 0 )
-        {
-            return $imagename = $this->id_tour;
-        }elseif($this->id_hoteltour !=0 )
-        {
-            return $imagename = $this->id_hotel;
-        }
+
         $config['upload_path']          = './gallery/';
         $config['allowed_types']        = 'jpg|png|webp|jpeg';
-        $config['file_name']            = $imagename;
-        $config['overwrite']			      = true;
+        $config['file_name']            = rand(1,100000);
+        $config['overwrite']			= false;
         $config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
-        if ($this->upload->do_upload('image1') != null) {
-            return $this->upload->data("file_name");
+        
+        if (!$this->upload->do_upload('image1')) {
+            $data['error'] = $this->upload->display_errors();
         }else
         {
-            var_dump($this->upload->do_upload('image1'));die();
+            return $this->upload->data("file_name");
         }
 
-        return "defaultman.jpg";
+        return "";
     }
 
     private function _uploadImage2()
     {
-        if($this->id_room != 0 )
-        {
-            return $imagename = $this->id_room;
-        }elseif($this->id_tour != 0 )
-        {
-            return $imagename = $this->id_tour;
-        }elseif($this->id_hoteltour !=0 )
-        {
-            return $imagename = $this->id_hotel;
-        }
+       
         $config['upload_path']          = './gallery/';
         $config['allowed_types']        = 'jpg|png|webp|jpeg';
-        $config['file_name']            = $imagename.'-2';
-        $config['overwrite']			      = true;
+        $config['file_name']            = rand(1,100000);
+        $config['overwrite']			= false;
         $config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
 
-        if ($this->upload->do_upload('image2') != null) {
+        if (!$this->upload->do_upload('image2')) {
+            $data['error'] = $this->upload->display_errors();
+        }else
+        {
             return $this->upload->data("file_name");
-        }else{
-            var_dump($this->upload->do_upload('image3'));
         }
 
-        return "defaultman.jpg";
+        return "";
     }
     private function _uploadImage3()
     {
-        if($this->id_room != 0 )
-        {
-            return $imagename = $this->id_room;
-        }elseif($this->id_tour != 0 )
-        {
-            return $imagename = $this->id_tour;
-        }elseif($this->id_hoteltour !=0 )
-        {
-            return $imagename = $this->id_hotel;
-        }
+       
         $config['upload_path']          = './gallery/';
         $config['allowed_types']        = 'jpg|png|webp|jpeg';
-        $config['file_name']            = $imagename.'-3';
-        $config['overwrite']			      = true;
+        $config['file_name']            = rand(1,100000);
+        $config['overwrite']			      = false;
         $config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
 
-        if ($this->upload->do_upload('image3') != null) {
+        if (!$this->upload->do_upload('image3')) {
+            $data['error'] = $this->upload->display_errors();
+        }else
+        {
             return $this->upload->data("file_name");
-        }else{
-            var_dump($this->upload->do_upload('image3'));
         }
 
-        return "defaultman.jpg";
+        return "";
     }
     private function _uploadImage4()
     {
-        if($this->id_room != 0 )
-        {
-            return $imagename = $this->id_room;
-        }elseif($this->id_tour != 0 )
-        {
-            return $imagename = $this->id_tour;
-        }elseif($this->id_hoteltour !=0 )
-        {
-            return $imagename = $this->id_hotel;
-        }
+       
         $config['upload_path']          = './gallery/';
         $config['allowed_types']        = 'jpg|png|webp|jpeg';
-        $config['file_name']            = $imagename.'-4';
-        $config['overwrite']			      = true;
+        $config['file_name']            = rand(1,100000);
+        $config['overwrite']			      = false;
         $config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
 
-        if ($this->upload->do_upload('image4') != null) {
+        if (!$this->upload->do_upload('image4')) {
+            $data['error'] = $this->upload->display_errors();
+        }else
+        {
             return $this->upload->data("file_name");
-        }else{
-            var_dump($this->upload->do_upload('image3'));
         }
 
-        return "defaultman.jpg";
+        return "";
     }
     private function _uploadImage5()
     {
-        if($this->id_room != 0 )
-        {
-            return $imagename = $this->id_room;
-        }elseif($this->id_tour != 0 )
-        {
-            return $imagename = $this->id_tour;
-        }elseif($this->id_hoteltour !=0 )
-        {
-            return $imagename = $this->id_hotel;
-        }
+       
         $config['upload_path']          = './gallery/';
         $config['allowed_types']        = 'jpg|png|webp|jpeg';
-        $config['file_name']            = $imagename.'-5';
-        $config['overwrite']			      = true;
+        $config['file_name']            = rand(1,100000);
+        $config['overwrite']			      = false;
         $config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
 
-        if ($this->upload->do_upload('image5') != null) {
+        if (!$this->upload->do_upload('image5')) {
+            $data['error'] = $this->upload->display_errors();
+        }else
+        {
             return $this->upload->data("file_name");
-        }else{
-            var_dump($this->upload->do_upload('image3'));
         }
 
-        return "defaultman.jpg";
+        return "";
     }
     private function _uploadImage6()
     {
-        if($this->id_room != 0 )
-        {
-            return $imagename = $this->id_room;
-        }elseif($this->id_tour != 0 )
-        {
-            return $imagename = $this->id_tour;
-        }elseif($this->id_hoteltour !=0 )
-        {
-            return $imagename = $this->id_hotel;
-        }
+       
         $config['upload_path']          = './gallery/';
         $config['allowed_types']        = 'jpg|png|webp|jpeg';
-        $config['file_name']            = $imagename.'-6';
-        $config['overwrite']			      = true;
+        $config['file_name']            = rand(1,100000);
+        $config['overwrite']			      = false;
         $config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
 
-        if ($this->upload->do_upload('image6') != null) {
+        if (!$this->upload->do_upload('image6')) {
+            $data['error'] = $this->upload->display_errors();
+        }else
+        {
             return $this->upload->data("file_name");
-        }else{
-            var_dump($this->upload->do_upload('image3'));
         }
 
-        return "defaultman.jpg";
+        return "";
     }
     private function _uploadImage7()
     {
-        if($this->id_room != 0 )
-        {
-            return $imagename = $this->id_room;
-        }elseif($this->id_tour != 0 )
-        {
-            return $imagename = $this->id_tour;
-        }elseif($this->id_hoteltour !=0 )
-        {
-            return $imagename = $this->id_hotel;
-        }
+       
         $config['upload_path']          = './gallery/';
         $config['allowed_types']        = 'jpg|png|webp|jpeg';
-        $config['file_name']            = $imagename.'-7';
-        $config['overwrite']			      = true;
+        $config['file_name']            = rand(1,100000);
+        $config['overwrite']			      = false;
         $config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
 
-        if ($this->upload->do_upload('image7') != null) {
+        if (!$this->upload->do_upload('image7')) {
+            $data['error'] = $this->upload->display_errors();
+        }else
+        {
             return $this->upload->data("file_name");
-        }else{
-            var_dump($this->upload->do_upload('image3'));
         }
 
-        return "defaultman.jpg";
+        return "";
     }
     private function _uploadImage8()
     {
-        if($this->id_room != 0 )
-        {
-            return $imagename = $this->id_room;
-        }elseif($this->id_tour != 0 )
-        {
-            return $imagename = $this->id_tour;
-        }elseif($this->id_hoteltour !=0 )
-        {
-            return $imagename = $this->id_hotel;
-        }
+       
         $config['upload_path']          = './gallery/';
         $config['allowed_types']        = 'jpg|png|webp|jpeg';
-        $config['file_name']            = $imagename.'-8';
-        $config['overwrite']			      = true;
+        $config['file_name']            = rand(1,100000);
+        $config['overwrite']			      = false;
         $config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
 
-        if ($this->upload->do_upload('image8') != null) {
+        if (!$this->upload->do_upload('image8')) {
+            $data['error'] = $this->upload->display_errors();
+        }else
+        {
             return $this->upload->data("file_name");
-        }else{
-            var_dump($this->upload->do_upload('image3'));
         }
 
-        return "defaultman.jpg";
+        return "";
     }
     private function _uploadImage9()
     {
-        if($this->id_room != 0 )
-        {
-            return $imagename = $this->id_room;
-        }elseif($this->id_tour != 0 )
-        {
-            return $imagename = $this->id_tour;
-        }elseif($this->id_hoteltour !=0 )
-        {
-            return $imagename = $this->id_hotel;
-        }
+       
         $config['upload_path']          = './gallery/';
         $config['allowed_types']        = 'jpg|png|webp|jpeg';
-        $config['file_name']            = $imagename.'-9';
-        $config['overwrite']			      = true;
+        $config['file_name']            = rand(1,100000);
+        $config['overwrite']			      = false;
         $config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
 
-        if ($this->upload->do_upload('image9') != null) {
+        if (!$this->upload->do_upload('image9')) {
+            $data['error'] = $this->upload->display_errors();
+        }else
+        {
             return $this->upload->data("file_name");
-        }else{
-            var_dump($this->upload->do_upload('image3'));
         }
 
-        return "defaultman.jpg";
+        return "";
     }
     private function _uploadImage10()
     {
-        if($this->id_room != 0 )
-        {
-            return $imagename = $this->id_room;
-        }elseif($this->id_tour != 0 )
-        {
-            return $imagename = $this->id_tour;
-        }elseif($this->id_hoteltour !=0 )
-        {
-            return $imagename = $this->id_hotel;
-        }
+       
         $config['upload_path']          = './gallery/';
         $config['allowed_types']        = 'jpg|png|webp|jpeg';
-        $config['file_name']            = $imagename.'-10';
-        $config['overwrite']			      = true;
+        $config['file_name']            = rand(1,100000);
+        $config['overwrite']			      = false;
         $config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
 
-        if ($this->upload->do_upload('image10') != null) {
+        if (!$this->upload->do_upload('image10')) {
+            $data['error'] = $this->upload->display_errors();
+        }else
+        {
             return $this->upload->data("file_name");
-        }else{
-            var_dump($this->upload->do_upload('image3'));
         }
 
-        return "defaultman.jpg";
+        return "";
     }
 
     private function _deleteImage($id_image)
@@ -390,7 +315,7 @@ class Image_model extends CI_Model
       if ($tour->IMG != "default.jpg")
       {
 	         $filename = explode(".", $tour->IMG)[0];
-		       return array_map('unlink', glob(FCPATH."tour/$filename.*"));
+		       return array_map('unlink', glob(FCPATH."gallery/$filename.*"));
       }
 
     }
