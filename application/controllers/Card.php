@@ -15,7 +15,7 @@ class Card extends CI_Controller {
     }
 	public function adminindex()
 	{
-        // $data['card'] = $this->Card_model->getAll();
+        $data['card'] = $this->Card_model->getAll();
 		$this->load->view('admin/card/index');
     }
 }

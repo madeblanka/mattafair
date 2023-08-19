@@ -36,6 +36,17 @@
               <!-- form start -->
               <form action="<?php echo site_url('image/adminsaveimage/') ?>" method="post"  enctype="multipart/form-data">
                 <div class="card-body">
+
+                    <div class="form-group">                        
+                    <label for="exampleInputEmail1">Package</label>
+                        <select name="id_package" id="idroom" class="form-control select2" style="width: 100%;">
+                            <option selected value="0">-</option>
+                            <?php foreach ($package as $p): ?>
+                            <option value="<?php echo $p->id_package?>" required><?php echo $p->hotel?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
                     <div class="form-group">                        
                     <label for="exampleInputEmail1">Room Name</label>
                         <select name="id_room" id="idroom" class="form-control select2" style="width: 100%;">

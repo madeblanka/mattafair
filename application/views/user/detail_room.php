@@ -2,29 +2,37 @@
 <html lang="en">
 
 <head>
-    <?php $this->load->view("user/_partials/head.php") ?>
-    <title>Room Details</title>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?= base_url('user/style/style.css')?>">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css" integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Nama Hotel/Resort 3D2N F & E PACKAGE Detail</title>
 </head>
 
 <body class="bg-gray-100">
-    <?php $this->load->view("user/_partials/sidebar.php") ?>
-    <?php foreach($room as $r):?>
+<?php $this->load->view("user/_partials/sidebar.php") ?>
+
     <section class="p-10">
         <div class="bg-white p-10 rounded-xl">
-            
+            <h1 class="font-bold text-3xl ml-2">Nama Hotel/Resort 3D2N F & E PACKAGE </h1>
+            <h1 class="font-thin text-md mb-10 ml-3">Hotel</h1>
             <div class="flex md:flex-row flex-col gap-5 ">
-                <?php foreach($image as $i):?>
                 <div class="flex gap-5 md:w-2/3 ">
-                    <a data-lightbox="image-1" href="<?= base_url('gallery/'.$i->image1)?>" alt="">
-                        <img src="<?= base_url('gallery/'.$i->image1)?>" class="rounded-lg w-full h-full object-cover" alt="">
+                    <a data-lightbox="image-1" href="./assets/img/slider1.jpg" alt="">
+                        <img src="./assets/img/slider1.jpg" class="rounded-lg w-full h-full object-cover" alt="">
                     </a>
                 </div>
                 <div class="flex flex-row md:flex-col gap-5  md:w-[45%] w-full align-center">
-                    <a data-lightbox="image-1" href="<?= base_url('gallery/'.$i->image2)?>" class="rounded-lg w-full  md:full object-cover" alt="">
-                        <img src="<?= base_url('gallery/'.$i->image2)?>" class="rounded-lg w-full  md:h-full object-cover" alt="">
+                    <a data-lightbox="image-1" href="./assets/img/slider2.jpg" class="rounded-lg w-full  md:full object-cover" alt="">
+                        <img src="./assets/img/slider2.jpg" class="rounded-lg w-full  md:h-full object-cover" alt="">
                     </a>
                     <div class="object-cover w-full overflow-hidden  aspect-video bg-red-400 cursor-pointer rounded-xl relative group">
-                        <a data-lightbox="image-1" href="<?= base_url('gallery/'.$i->image3)?>">
+                        <a data-lightbox="image-1" href="./assets/img/slider3.jpg">
 
                             <div class="flex rounded-xl z-50 opacity-100 h-full cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white  items-center">
                                 <div>
@@ -34,45 +42,38 @@
                                 </div>
                             </div>
                         </a>
-                        <a  href="<?= base_url('gallery/'.$i->image3)?>">
-                            <img alt="" class="rounded-lg w-full  md:full object-cover" src="<?= base_url('gallery/'.$i->image3)?>" />
+                        <a href="./assets/img/slider3.jpg">
+                            <img alt="" class="rounded-lg w-full  md:full object-cover" src="./assets/img/slider3.jpg" />
                         </a>
                     </div>
                 </div>
                 <div class="hidden flex-row md:flex-col gap-5  md:w-[45%] w-full align-center">
-                    <a data-lightbox="image-1" href="<?= base_url('gallery/'.$i->image4)?>" class="rounded-lg w-full  md:full object-cover" alt="">
-                        <img src="<?= base_url('gallery/'.$i->image4)?>" class="rounded-lg w-full  md:h-full object-cover" alt="">
+                    <a data-lightbox="image-1" href="./assets/img/slider2.jpg" class="rounded-lg w-full  md:full object-cover" alt="">
+                        <img src="./assets/img/slider2.jpg" class="rounded-lg w-full  md:h-full object-cover" alt="">
                     </a>
-                    <a data-lightbox="image-1" href="<?= base_url('gallery/'.$i->image5)?>" class="rounded-lg w-full  md:full object-cover" alt="">
-                        <img src="<?= base_url('gallery/'.$i->image5)?>" class="rounded-lg w-full  md:h-full object-cover" alt="">
+                    <a data-lightbox="image-1" href="./assets/img/slider3.jpg" class="rounded-lg w-full  md:full object-cover" alt="">
+                        <img src="./assets/img/slider3.jpg" class="rounded-lg w-full  md:h-full object-cover" alt="">
                     </a>
                 </div>
             </div>
         </div>
-        <?php endforeach?>
+
         <div class="flex flex-col md:flex-row gap-5">
             <div class="bg-white p-10 rounded-xl mt-10 flex-[50%]">
-            <h1 class="font-bold text-3xl "><?= $r->name?>  </h1>
-            <h1 class="font-semibold text-md   mt-6">Start From </h1>
-            <h1 class="font-bold italic text-lg  mb-10  ">MYR. <?= number_format($r->price,2)?> / room / night</h1>
-                <h1 class="font-thin text-md"><?= $r->facility?></h1>
-                    
+                <h1 class="font-thin text-md ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia facere delectus minima ipsum. Ipsa autem, sunt facere, voluptatem provident, dolore animi possimus laboriosam sapiente dolorem ullam non enim excepturi magni? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus repellat maxime reprehenderit debitis repellendus ex, expedita veniam cumque vero voluptatem iure alias cupiditate quia. Modi, nostrum temporibus! Sunt, aperiam veritatis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut rerum necessitatibus commodi quo alias, dolorem, dicta harum eligendi exercitationem laudantium qui ducimus architecto voluptates similique repudiandae! In numquam nam non.</h1>
+
             </div>
             <div class="bg-white p-10 rounded-xl mt-10 flex-[50%]">
-                <form action="<?= site_url('main/addcart')?>" method="post"  enctype="multipart/form-data">
-                    <input type="hidden" name="sessionuser" value="<?= $this->input->ip_address()?>">
-                    <input type="hidden" name="id_room" value="<?= $r->id_room?>">
-                    <input type="hidden" name="id_tour" value="0">
-                    <input type="hidden" name="id_additional" value="0">
-                    <input type="hidden" name="id_hoteltour" value="0">
-                    <input type="hidden" name="price" value="<?= $r->price?>">
+                <form>
+
                     <div class="mb-6">
                         <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date Check-in/Checkout</label>
                         <div class="flex ">
+
                             <div date-rangepicker class="flex items-start md:items-center flex-col md:flex-row w-full">
-                                <input name="checkin" type="date" id="checkinDate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date start">
+                                <input name="start" type="date" id="checkinDate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date start">
                                 <span class="mx-4 text-gray-500">to</span>
-                                <input name="checkout" type="date"  id="checkoutDate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date end">
+                                <input name="end" type="date" id="checkoutDate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date end">
                             </div>
                         </div>
                         <p id="error" class="text-red-600 mt-2"></p>
@@ -82,18 +83,50 @@
                         <div class="flex flex-col md:flex-row gap-10 ">
                             <div class="flex flex-col w-full">
                                 <h1 class=" text-sm font-thin mr-4 mb-2 ">Adult</h1>
-                                <input type="number" name="adult" min="1" id="adult" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
-                            </div>
-                            <div class="flex flex-col w-full">
-                                <h1 class=" text-sm font-thin mr-4 mb-2 ">Child</h1>
-                                <input type="number" name="child" min="1" id="child" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+                                <input type="number" min="1" id="adult" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
                             </div>
                         </div>
                     </div>
                     <div class="mb-6">
+                        <div class="flex">
+                            <div class="flex flex-col w-full gap-5">
+                                <h1 class="text-sm font-thin mr-4 mb-2">Child</h1>
+
+                                <input type="number" min="0" id="child" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+
+                                <div class="block" id="inputContainer">
+                                    <label for="baby" class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white">Choose Child Bed Option</label>
+                                    <select id="baby"  class=" block bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <option value="cwb">Child With Bed</option>
+                                        <option value="cnb">Child No Bed</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Extend Night</label>
                         <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Total Room</label>
                         <div class="flex">
-                            <input type="number" name="qty" id="jml_kamar" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+                            <input type="number" id="jml_kamar" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+                            <!-- <h1 class="ml-4 text-sm font-thin mr-4 justify-center align-center self-center">/ Room </h1> -->
+                        </div>
+
+                        <label for="countries" class="block mb-2 mt-2 text-sm font-medium text-gray-900 dark:text-white">Choose Bed Type</label>
+                        <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="single">Single</option>
+                            <option value="twin">Twin</option>
+                            <option value="triple">Triple</option>
+                        </select>
+
+                    </div>
+                    <div class="mb-6">
+                        <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+                        <div class="flex">
+                            <h1 class="text-md font-bold mr-4 justify-center align-center self-center">MYR</h1>
+                            <h1 class="text-md font-bold mr-4 justify-center align-center self-center">1.100.000</h1>
+                            <!-- <input type="text" id="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required> -->
+                            <!-- <h1 class="ml-4 text-sm font-thin mr-4 justify-center align-center self-center">Room / Pax / Package</h1> -->
                         </div>
                     </div>
 
@@ -102,7 +135,6 @@
             </div>
         </div>
     </section>
-    <?php endforeach?>
     <!-- tour package -->
     <div class="px-10 py-24">
         <h1 class="text-3xl font-semibold mb-10 text-center">Related Post</h1>
@@ -293,43 +325,17 @@
         </div>
     </div>
 
-        <script>
-    const numRoomsInput = document.getElementById("jml_kamar");
-    const totalPriceSpan = document.getElementById("price");
 
-    numRoomsInput.addEventListener("input", updateTotalPrice);
+    <?php $this->load->view("user/_partials/footer.php") ?>
 
-    function updateTotalPrice() {
-        const numRooms = numRoomsInput.value;
-        
-        // Retrieve the total price value directly from the element
-        const total = parseFloat(totalPriceSpan.textContent); // Remove the "$" symbol
-        console.log(total);
-        
-        // Perform your calculation based on the total and numRooms
-        const pricePerRoom = total * numRooms;
-        
-        // Update the total price display
-        totalPriceSpan.textContent = pricePerRoom.toFixed(2);
-    }
-    </script>
-
-<?php $this->load->view("user/_partials/footer.php") ?>
-    <script>
-        
-        tailwind.config = {
-          darkMode: 'class',
-        }
-        document.getElementById('checkinDate').valueAsDate = new Date();
-    </script>
+    <script src="<?=base_url('user/scripts/childInput.js')?>"></script>
+    <script src="<?=base_url('user/scripts/dateRange.js')?>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
-    <script src="<?= base_url('user/scripts/input.js')?>"></script>
-    <script src="<?= base_url('user/scripts/dateRange.js')?>"></script>
-    
-
+    <script src="<?=base_url('user/scripts/input.js')?>"></script>
+    <script src="<?=base_url('user/scripts/index.js')?>"></script>
 </body>
 
 </html>

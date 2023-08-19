@@ -14,6 +14,9 @@ class Main extends CI_Controller {
         $this->load->model('Image_model');
         $this->load->model('Room_model');
         $this->load->model('Tour_model');
+        $this->load->model('Package_model');
+        $this->load->model('Threeday2n_model');
+        $this->load->model('Fourday3n_model');
         $this->load->library('curl');
 		$this->load->library('form_validation');
         $this->load->library('user_agent');
@@ -24,9 +27,17 @@ class Main extends CI_Controller {
         $data['hotel'] = $this->Hotel_model->getAll();
         $data['tour'] = $this->Tour_model->getAll();
         $data['hoteltour'] = $this->Hoteltour_model->getAll();
+        $data['freeneasy'] = $this->Package_model->getfneAsc();
         $this->load->view('user/index',$data);
     }
 	
+    public function detailpackage($id_package)
+    {
+        $data['package'] = $this->Package_model->getById($id_package);
+        $data['image'] = $this->Image_model->getbyIdpackage($id_package);
+        $this->load->view('user/detail_package',$data);
+    }
+
     public function cekip()
     {
 

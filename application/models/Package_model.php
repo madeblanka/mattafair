@@ -13,9 +13,9 @@ class Package_model extends CI_Model
         return $this->db->get($this->_table)->result();
     }
     
-    public function getById($id_booked)
+    public function getById($id_package)
     {
-        return $this->db->get_where($this->_table, ["id_booked" => $id_booked])->result();
+        return $this->db->get_where($this->_table, ["id_package" => $id_package])->result();
     }
 
     public function save()
@@ -34,7 +34,20 @@ class Package_model extends CI_Model
         $this->id_package= $post["id_package"];
         $this->kategori = $post["kategori"];
         $this->hotel = $post["hotel"];
-        return $this->db->update($this->_table, $this, array('id_booked' => $post['id_booked']));
+        return $this->db->update($this->_table, $this, array('id_package' => $post['id_package']));
     }
 
+    public function getAllId()
+    {
+        return $this->db->select('id_package,hotel')->get($this->_table)->result();
+    }
+
+    public function getfneAsc()
+    {
+        $this->db->select('*');
+        $this->db->from('package');
+        $this->db->where('kategori','Free and Easy');
+        $this->db->order_by('id_package ASC');
+        return $this->db->get()->result();
+    }
 }

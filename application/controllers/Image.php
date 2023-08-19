@@ -8,6 +8,7 @@ class Image extends CI_Controller {
         $this->load->model('Image_model');
         $this->load->model('Room_model');
         $this->load->model('Tour_model');
+        $this->load->model('Package_model');
         $this->load->model('Hoteltour_model');
         $this->load->model('Additional_model');
 		$this->load->library('form_validation');
@@ -29,6 +30,7 @@ class Image extends CI_Controller {
         $data['tour'] = $this->Tour_model->getAllId();
         $data['hoteltour'] = $this->Hoteltour_model->getAllId();
         $data['additional'] = $this->Additional_model->getAllId();
+        $data['package'] = $this->Package_model->getAllId();
         $this->load->view('admin/image/create',$data);
     }
 

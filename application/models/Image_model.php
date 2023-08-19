@@ -6,6 +6,7 @@ class Image_model extends CI_Model
 
     public $id_image;
     public $id_room;
+    public $id_package;
     public $id_tour;
     public $id_hoteltour;
     public $image1;
@@ -40,11 +41,21 @@ class Image_model extends CI_Model
     {
         return $this->db->get_where($this->_table, ["id_room" => $id_room])->row();
     }
+    
+    public function getbyIdpackagerow($id_package)
+    {
+        return $this->db->get_where($this->_table, ["id_package" => $id_package])->row();
+    }
 
+    public function getbyIdpackage($id_package)
+    {
+        return $this->db->get_where($this->_table, ["id_package" => $id_package])->result();
+    }
     public function save()
     {
         $post = $this->input->post();
         $this->id_image= "";
+        $this->id_package = $post["id_package"];
         $this->id_room = $post["id_room"];
         $this->id_tour = $post["id_tour"];
         $this->id_hoteltour = $post["id_hoteltour"];
